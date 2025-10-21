@@ -1,18 +1,57 @@
+git clone https://github.com/liuzhengyu/liuzhengyu.github.io.git
+cd liuzhengyu.github.io
+
+cat > index.html <<'EOF'
 <!doctype html>
 <html lang="zh-CN">
 <head>
   <meta charset="utf-8">
-  <title>刘峥宇的个人网站</title>
+  <title>刘峥宇的个人主页</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <style>
-    body{font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,"PingFang SC","Microsoft YaHei",sans-serif;
-         margin:0 auto;max-width:700px;padding:2rem;line-height:1.6;background:#fafafa;color:#333}
-    h1{color:#0969da}
-  </style>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <h1>你好，我是刘峥宇 👋</h1>
-  <p>计算机系大三，喜欢 Rust、UI 设计、攀岩。</p>
-  <p>欢迎访问我的 <a href="https://github.com/LZY8211" target="_blank">GitHub</a>。</p>
+  <header>
+    <h1>你好，我是刘峥宇</h1>
+    <p>计算机系学生 · 开源爱好者 · 咖啡续命</p>
+  </header>
+
+  <main>
+    <section>
+      <h2>关于我</h2>
+      <p>目前主攻 Web 性能优化，实习于某酷公司。欢迎一起交流！</p>
+    </section>
+
+    <section>
+      <h2>快速链接</h2>
+      <ul>
+        <li><a href="https://github.com/liuzhengyu" target="_blank">GitHub</a></li>
+        <li><a href="resume.pdf">简历（PDF）</a></li>
+        <li><a href="mailto:zhangsan@example.com">邮箱</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <small>© 2025 刘峥宇 – 托管于 GitHub Pages</small>
+  </footer>
 </body>
 </html>
+EOF
+  cat > styles.css <<'EOF'
+:root{
+  --bg:#f7f9fc;
+  --fg:#111;
+  --accent:#0969da;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif;
+}
+body{margin:0;background:var(--bg);color:var(--fg);line-height:1.7}
+header,main,footer{max-width:700px;margin:auto;padding:2rem}
+h1,h2{color:var(--accent)}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+footer{text-align:center;font-size:0.8rem;margin-top:4rem}
+EOF
+    git add .
+git commit -m "添加首页与基础样式"
+git push -u origin main
