@@ -1,57 +1,52 @@
-git clone https://github.com/liuzhengyu/liuzhengyu.github.io.git
-cd liuzhengyu.github.io
-
-cat > index.html <<'EOF'
-<!doctype html>
+<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="utf-8">
-  <title>刘峥宇的个人主页</title>
+  <meta charset="UTF-8">
+  <title>Hi, I'm 你的名字</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="styles.css">
+  <style>
+    :root{--accent:#0969da;--bg:#fafafa;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif}
+    body{margin:0;background:var(--bg);line-height:1.7}
+    header,section,footer{max-width:700px;margin:auto;padding:2rem}
+    header{text-align:center}
+    h1,h2{color:var(--accent)}
+    a{color:var(--accent);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .avatar{width:120px;height:120px;border-radius:50%;margin-bottom:1rem}
+  </style>
 </head>
 <body>
   <header>
-    <h1>你好，我是刘峥宇</h1>
-    <p>计算机系学生 · 开源爱好者 · 咖啡续命</p>
+    <img src="https://github.com/你的用户名.png" class="avatar" alt="avatar">
+    <h1>嗨，我是 你的名字</h1>
+    <p>计算机系 | 全栈开发 | 咖啡续命</p>
   </header>
 
-  <main>
-    <section>
-      <h2>关于我</h2>
-      <p>目前主攻 Web 性能优化，实习于某酷公司。欢迎一起交流！</p>
-    </section>
+  <section>
+    <h2>关于我</h2>
+    <ul>
+      <li>主攻 React + Node 性能优化</li>
+      <li>2024 Google Summer of Code 学生</li>
+      <li>偶尔写 <a href="https://juejin.cn" target="_blank">技术博客</a></li>
+    </ul>
+  </section>
 
-    <section>
-      <h2>快速链接</h2>
-      <ul>
-        <li><a href="https://github.com/liuzhengyu" target="_blank">GitHub</a></li>
-        <li><a href="resume.pdf">简历（PDF）</a></li>
-        <li><a href="mailto:zhangsan@example.com">邮箱</a></li>
-      </ul>
-    </section>
-  </main>
+  <section>
+    <h2>作品集</h2>
+    <ul>
+      <li><a href="https://github.com/你的用户名/mini-shop" target="_blank">mini-shop</a> – 小程序商城（3.2k⭐）</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>联系我</h2>
+    <a href="mailto:your@email.com">邮箱</a> |
+    <a href="https://github.com/你的用户名" target="_blank">GitHub</a> |
+    <a href="resume.pdf">简历 PDF</a>
+  </section>
 
   <footer>
-    <small>© 2025 刘峥宇 – 托管于 GitHub Pages</small>
+    © 2025 你的名字 – 托管于 <a href="https://pages.github.com" target="_blank">GitHub Pages</a>
   </footer>
 </body>
 </html>
-EOF
-  cat > styles.css <<'EOF'
-:root{
-  --bg:#f7f9fc;
-  --fg:#111;
-  --accent:#0969da;
-  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif;
-}
-body{margin:0;background:var(--bg);color:var(--fg);line-height:1.7}
-header,main,footer{max-width:700px;margin:auto;padding:2rem}
-h1,h2{color:var(--accent)}
-a{color:var(--accent);text-decoration:none}
-a:hover{text-decoration:underline}
-footer{text-align:center;font-size:0.8rem;margin-top:4rem}
-EOF
-    git add .
-git commit -m "添加首页与基础样式"
-git push -u origin main
